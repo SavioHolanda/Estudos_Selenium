@@ -7,6 +7,6 @@ Funcionalidade: Realizar login com sucesso
 	Com intuído de acessar a pagina principal.
 	
 Cenario: Realizar login com sucesso
-Dado que informo o "Login" e "senha"
+Dado que informo o "a@a" e "a"
 Quando clico no botão entrar
 Então sou direcionado a pagina principal.
