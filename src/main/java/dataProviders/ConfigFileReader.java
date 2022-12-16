@@ -26,14 +26,14 @@ public class ConfigFileReader {
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Configuration.properties not found at " + propertyFilePath);
+			throw new RuntimeException("Configuration.properties não encontrado em " + propertyFilePath);
 		}		
 	}
 
 	public String getDriverPath(){
 		String driverPath = properties.getProperty("driverPath");
 		if(driverPath!= null) return driverPath;
-		else throw new RuntimeException("Driver Path not specified in the Configuration.properties file for the Key:driverPath");		
+		else throw new RuntimeException("Caminho do driver não espeficicado no Configuration.properties arquivo para a chave:driverPath");		
 	}
 
 	public long getImplicitlyWait() {		
@@ -42,7 +42,7 @@ public class ConfigFileReader {
 			try{
 				return Long.parseLong(implicitlyWait);
 			}catch(NumberFormatException e) {
-				throw new RuntimeException("Not able to parse value : " + implicitlyWait + " in to Long");
+				throw new RuntimeException("Não é possivel analisar o valor : " + implicitlyWait + " em muito tempo");
 			}
 		}
 		return 30;		
@@ -51,7 +51,7 @@ public class ConfigFileReader {
 	public String getApplicationUrl() {
 		String url = properties.getProperty("url");
 		if(url != null) return url;
-		else throw new RuntimeException("Application Url not specified in the Configuration.properties file for the Key:url");
+		else throw new RuntimeException("URL do aplicativo não especificado no arquivo Configuration.properties para a chave:url");
 	}
 
 	public DriverType getBrowser() {
@@ -59,14 +59,14 @@ public class ConfigFileReader {
 		if(browserName == null || browserName.equals("chrome")) return DriverType.CHROME;
 		else if(browserName.equalsIgnoreCase("firefox")) return DriverType.FIREFOX;
 		else if(browserName.equals("iexplorer")) return DriverType.INTERNETEXPLORER;
-		else throw new RuntimeException("Browser Name Key value in Configuration.properties is not matched : " + browserName);
+		else throw new RuntimeException("Valor da chave do nome do navegador em Configuration.properties não é compatível : " + browserName);
 	}
 
 	public EnvironmentType getEnvironment() {
 		String environmentName = properties.getProperty("environment");
 		if(environmentName == null || environmentName.equalsIgnoreCase("local")) return EnvironmentType.LOCAL;
 		else if(environmentName.equals("remote")) return EnvironmentType.REMOTE;
-		else throw new RuntimeException("Environment Type Key value in Configuration.properties is not matched : " + environmentName);
+		else throw new RuntimeException("Valor da chave do tipo de ambiente em Configuration.properties não é compatível : " + environmentName);
 	}
 
 	public Boolean getBrowserWindowSize() {

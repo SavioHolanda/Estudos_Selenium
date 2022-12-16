@@ -23,9 +23,7 @@ public class LoginPage {
 	WebElement button;
 	
 	@FindBy(css = ".alert")
-	WebElement MensagemLogado;
-	
-	
+	WebElement MensagemLogado;	
 	
 	public void enter_email(String eemail) {
 		email.sendKeys(eemail);
