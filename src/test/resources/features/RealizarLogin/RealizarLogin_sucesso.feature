@@ -1,5 +1,6 @@
 #language: pt
 
+@RealizarLogin
 Funcionalidade: Realizar login com sucesso
 
 	Como um usuário 

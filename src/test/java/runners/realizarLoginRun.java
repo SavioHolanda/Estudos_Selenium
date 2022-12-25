@@ -9,8 +9,8 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features = "src/test/resources/features/RealizarLogin",
-		glue = "stepsDefinitions",
-		//tags = "",
+		glue = "realizarLoginStep",
+		tags = "@RealizarLogin",
 		plugin = {"pretty","html:target/report-html","json:target/report.json"},
 		monochrome = true,
 		snippets = SnippetType.CAMELCASE,
